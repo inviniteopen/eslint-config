@@ -19,7 +19,7 @@ describe("React Config", () => {
       const code = fixture("react-hooks-valid.tsx");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "react-hooks/exhaustive-deps"
+        (m) => m.ruleId === "react-hooks/exhaustive-deps",
       );
       expect(errors).toHaveLength(0);
     });
@@ -28,7 +28,7 @@ describe("React Config", () => {
       const code = fixture("react-hooks-invalid.tsx");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "react-hooks/exhaustive-deps"
+        (m) => m.ruleId === "react-hooks/exhaustive-deps",
       );
       expect(errors.length).toBeGreaterThan(0);
       expect(errors[0].message).toContain("id");
@@ -40,7 +40,7 @@ describe("React Config", () => {
       const code = fixture("react-refresh-valid.tsx");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "react-refresh/only-export-components"
+        (m) => m.ruleId === "react-refresh/only-export-components",
       );
       expect(errors).toHaveLength(0);
     });
@@ -49,7 +49,7 @@ describe("React Config", () => {
       const code = fixture("react-refresh-invalid.tsx");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "react-refresh/only-export-components"
+        (m) => m.ruleId === "react-refresh/only-export-components",
       );
       expect(errors.length).toBeGreaterThan(0);
     });
@@ -60,7 +60,7 @@ describe("React Config", () => {
       const code = fixture("react-compiler-conditional-hook-invalid.tsx");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "react-hooks/rules-of-hooks"
+        (m) => m.ruleId === "react-hooks/rules-of-hooks",
       );
       expect(errors.length).toBeGreaterThan(0);
       expect(errors[0].message).toContain("called conditionally");
@@ -72,7 +72,7 @@ describe("React Config", () => {
       const code = fixture("import-sort-invalid.ts");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "simple-import-sort/imports"
+        (m) => m.ruleId === "simple-import-sort/imports",
       );
       expect(errors.length).toBeGreaterThan(0);
     });
@@ -81,7 +81,7 @@ describe("React Config", () => {
       const code = fixture("unused-imports-invalid.ts");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "unused-imports/no-unused-imports"
+        (m) => m.ruleId === "unused-imports/no-unused-imports",
       );
       expect(errors.length).toBeGreaterThan(0);
     });

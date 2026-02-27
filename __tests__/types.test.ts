@@ -1,10 +1,10 @@
+import type { Linter } from "eslint";
 import { expectTypeOf } from "expect-type";
 import { describe, it } from "vitest";
-import type { Linter } from "eslint";
 
-import nodeConfig from "./node.js";
-import reactConfig from "./react.js";
-import defaultConfig, { node, react } from "./index.js";
+import defaultConfig, { node, react } from "../index.js";
+import nodeConfig from "../node.js";
+import reactConfig from "../react.js";
 
 describe("Type definitions", () => {
   it("node config should be an array of Linter.Config", () => {

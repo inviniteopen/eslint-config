@@ -19,7 +19,7 @@ describe("Node Config", () => {
       const code = fixture("import-sort-valid.ts");
       const results = await eslint.lintText(code, { filePath: "test.ts" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "simple-import-sort/imports"
+        (m) => m.ruleId === "simple-import-sort/imports",
       );
       expect(errors).toHaveLength(0);
     });
@@ -28,7 +28,7 @@ describe("Node Config", () => {
       const code = fixture("import-sort-invalid.ts");
       const results = await eslint.lintText(code, { filePath: "test.ts" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "simple-import-sort/imports"
+        (m) => m.ruleId === "simple-import-sort/imports",
       );
       expect(errors.length).toBeGreaterThan(0);
     });
@@ -39,7 +39,7 @@ describe("Node Config", () => {
       const code = fixture("unused-imports-valid.ts");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "unused-imports/no-unused-imports"
+        (m) => m.ruleId === "unused-imports/no-unused-imports",
       );
       expect(errors).toHaveLength(0);
     });
@@ -48,7 +48,7 @@ describe("Node Config", () => {
       const code = fixture("unused-imports-invalid.ts");
       const results = await eslint.lintText(code, { filePath: "test.tsx" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "unused-imports/no-unused-imports"
+        (m) => m.ruleId === "unused-imports/no-unused-imports",
       );
       expect(errors.length).toBeGreaterThan(0);
       expect(errors[0].message).toContain("useEffect");
@@ -60,7 +60,7 @@ describe("Node Config", () => {
       const code = fixture("unused-vars-valid.ts");
       const results = await eslint.lintText(code, { filePath: "test.ts" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "@typescript-eslint/no-unused-vars"
+        (m) => m.ruleId === "@typescript-eslint/no-unused-vars",
       );
       expect(errors).toHaveLength(0);
     });
@@ -69,7 +69,7 @@ describe("Node Config", () => {
       const code = fixture("unused-vars-invalid.ts");
       const results = await eslint.lintText(code, { filePath: "test.ts" });
       const errors = results[0].messages.filter(
-        (m) => m.ruleId === "@typescript-eslint/no-unused-vars"
+        (m) => m.ruleId === "@typescript-eslint/no-unused-vars",
       );
       expect(errors.length).toBeGreaterThan(0);
       expect(errors[0].message).toContain("locale");

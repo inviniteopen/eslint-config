@@ -35,9 +35,11 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint -c node.js node.js && eslint -c react.js react.js",
-    "lint:fix": "eslint -c node.js node.js --fix && eslint -c react.js react.js --fix",
-    "prepublishOnly": "yarn test && yarn lint && npm pack --dry-run"
+    "lint": "eslint -c node.js --ignore-pattern __tests__/fixtures .",
+    "lint:fix": "eslint -c node.js --ignore-pattern __tests__/fixtures . --fix",
+    "format": "prettier --check --ignore-path .prettierignore .",
+    "format:fix": "prettier --write --ignore-path .prettierignore .",
+    "prepublishOnly": "yarn test && yarn lint && yarn format && npm pack --dry-run"
   },
   "dependencies": {
     "@eslint/js": "^10.0.1",
@@ -54,6 +56,7 @@
     "@types/react": "^19.2.14",
     "eslint": "^9.39.2",
     "expect-type": "^1.3.0",
+    "prettier": "^3.8.1",
     "react": "^19.2.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
