@@ -1,0 +1,70 @@
+{
+  "name": "@invinite/eslint-config",
+  "version": "1.0.0-rc.1",
+  "description": "Unified ESLint configuration for Node and React projects",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inviniteopen/eslint-config.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "node.js",
+    "node.d.ts",
+    "react.js",
+    "react.d.ts",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./node": {
+      "types": "./node.d.ts",
+      "default": "./node.js"
+    },
+    "./react": {
+      "types": "./react.d.ts",
+      "default": "./react.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint -c node.js node.js && eslint -c react.js react.js",
+    "lint:fix": "eslint -c node.js node.js --fix && eslint -c react.js react.js --fix",
+    "prepublishOnly": "yarn test && yarn lint && npm pack --dry-run"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "typescript-eslint": "^8.56.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.1",
+    "@types/react": "^19.2.14",
+    "eslint": "^9.39.2",
+    "expect-type": "^1.3.0",
+    "react": "^19.2.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "packageManager": "yarn@4.12.0"
+}
