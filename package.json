@@ -1,6 +1,6 @@
 {
   "name": "@invinite/eslint-config",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "description": "Unified ESLint configuration for Node and React projects",
   "license": "MIT",
   "repository": {
