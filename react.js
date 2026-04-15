@@ -1,31 +1,22 @@
-import reactJsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
-import reactRecommended from "eslint-plugin-react/configs/recommended.js";
-import reactHooks from "eslint-plugin-react-hooks";
+import eslintReact from "@eslint-react/eslint-plugin";
+import { defineConfig } from "eslint/config";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 import nodeConfig from "./node.js";
 
-export default [
+export default defineConfig([
   ...nodeConfig,
-  reactRecommended,
-  reactJsxRuntime,
   {
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
+    files: ["**/*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}"],
+    extends: [eslintReact.configs["recommended-typescript"]],
     plugins: {
       "react-refresh": reactRefresh,
-      "react-hooks": reactHooks,
     },
     rules: {
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
     },
   },
-];
+]);
