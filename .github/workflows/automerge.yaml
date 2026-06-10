@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Automerge Dependabot PR
-        uses: inviniteopen/action-automerge@v1
+        uses: inviniteopen/action-automerge@12d7201e2a56abb20a0c14c09f53babdcb415176 # v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
