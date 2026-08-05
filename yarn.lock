@@ -299,7 +299,10 @@ __metadata:
     vitest: "npm:^4.0.18"
   peerDependencies:
     eslint: ">= 9"
+    svelte: ">= 5"
   peerDependenciesMeta:
+    svelte:
+      optional: true
     typescript:
       optional: true
   languageName: unknown
