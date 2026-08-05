@@ -2,9 +2,10 @@ import type { Linter } from "eslint";
 import { expectTypeOf } from "expect-type";
 import { describe, it } from "vitest";
 
-import defaultConfig, { node, react } from "../index.js";
+import defaultConfig, { node, react, svelte } from "../index.js";
 import nodeConfig from "../node.js";
 import reactConfig from "../react.js";
+import svelteConfig from "../svelte.js";
 
 describe("Type definitions", () => {
   it("node config should be an array of Linter.Config", () => {
@@ -13,6 +14,10 @@ describe("Type definitions", () => {
 
   it("react config should be an array of Linter.Config", () => {
     expectTypeOf(reactConfig).toEqualTypeOf<Linter.Config[]>();
+  });
+
+  it("svelte config should be an array of Linter.Config", () => {
+    expectTypeOf(svelteConfig).toEqualTypeOf<Linter.Config[]>();
   });
 
   it("default export should be an array of Linter.Config", () => {
@@ -27,6 +32,10 @@ describe("Type definitions", () => {
     expectTypeOf(react).toEqualTypeOf<Linter.Config[]>();
   });
 
+  it("named export 'svelte' should be an array of Linter.Config", () => {
+    expectTypeOf(svelte).toEqualTypeOf<Linter.Config[]>();
+  });
+
   it("configs should be assignable to Linter.Config[]", () => {
     const testConfig: Linter.Config[] = nodeConfig;
     expectTypeOf(testConfig).toEqualTypeOf<Linter.Config[]>();
@@ -35,5 +44,6 @@ describe("Type definitions", () => {
   it("configs should contain proper config structure", () => {
     expectTypeOf(nodeConfig[0]).toMatchTypeOf<Linter.Config>();
     expectTypeOf(reactConfig[0]).toMatchTypeOf<Linter.Config>();
+    expectTypeOf(svelteConfig[0]).toMatchTypeOf<Linter.Config>();
   });
 });
