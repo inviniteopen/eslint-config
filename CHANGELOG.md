@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-08-05
+
+### Added
+
+- Svelte support via new `/svelte` entry point (`eslint-plugin-svelte` with the
+  recommended and Prettier presets, TypeScript parsing in `.svelte` files).
+- Optional `svelte >= 5` peer dependency.
+- README note on TypeScript 7: typescript-eslint is blocked on the TS 7.1
+  stable API; documents the `@typescript/typescript6` alias workaround.
+
 ## [2.0.1] - 2026-05-05
 
 ### Changed
@@ -37,7 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Bundled Prettier compatibility, import sorting, and unused-import detection.
 - `node`, `react`, and base config entry points.
 
-[Unreleased]: https://github.com/inviniteopen/eslint-config/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/inviniteopen/eslint-config/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/inviniteopen/eslint-config/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/inviniteopen/eslint-config/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/inviniteopen/eslint-config/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/inviniteopen/eslint-config/releases/tag/v1.0.0
